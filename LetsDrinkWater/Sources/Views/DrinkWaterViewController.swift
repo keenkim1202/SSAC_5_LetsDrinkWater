@@ -19,9 +19,7 @@ class DrinkWaterViewController: UIViewController {
   // MARK: Properties
   var goal: Double = 0
   var drunken: Double = 0
-  var totalDrink: Double = 0
   var perDrink: Int = 0
-  var name: String = ""
   
   // MARK: View Life-Cycle
   override func viewDidLoad() {
@@ -32,9 +30,12 @@ class DrinkWaterViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(true)
     
-    print("mainVC - ", name, totalDrink)
-    if !name.isEmpty  {
-      dailyAmountLabel.text = "\(name)님 하루 물 권장 섭취량은 \(totalDrink)L 입니다."
+    let userName = UserDefaults.standard.string(forKey: "usrName")
+    
+    if userName != nil  {
+      let userName = UserDefaults.standard.string(forKey: "usrName")!
+      let userTotal = UserDefaults.standard.string(forKey: "usrTotal")!
+      dailyAmountLabel.text = "\(userName)님 하루 물 권장 섭취량은 \(userTotal)L 입니다."
     } else {
       print(UserDefaults.standard.string(forKey: "usrNickName") ?? "none")
       dailyAmountLabel.text = "프로필을 다시 설정해주세요 :<"
@@ -50,9 +51,9 @@ class DrinkWaterViewController: UIViewController {
       drunkenLabel.text = "\(drunken)ml"
     }
     // 목표량
-    goal = (drunken / (totalDrink * 1000)) * 100
+    let userTotal = UserDefaults.standard.double(forKey: "usrTotal")
+    goal = (drunken / (userTotal * 1000)) * 100
     
-    print(totalDrink, drunken, goal)
     if goal >= 100 {
       goalLabel.textColor = .yellow
       goalLabel.text = "목표의 \(goal)%"
