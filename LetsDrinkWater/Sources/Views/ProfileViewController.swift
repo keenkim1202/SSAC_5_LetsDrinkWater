@@ -24,6 +24,7 @@ class ProfileViewController: UIViewController {
   
   // MARK: Properties
   fileprivate var items: [Item] = [.image, .nickname, .height, .weight]
+  fileprivate var itemInputs: [Item: String] = [:]
   
   // MARK: UI
   @IBOutlet weak var tableView: UITableView!
@@ -43,20 +44,34 @@ class ProfileViewController: UIViewController {
   @IBAction func onDoneButton(_ sender: UIBarButtonItem) {
     self.tableView.endEditing(true)
     
-    guard let nickname = UserDefaults.standard.string(forKey: "nickname") else {
+    guard let nickname = itemInputs[.nickname] else {
       showAlert("닉네임을 입력해주세요")
       return
     }
     
-    guard let height = UserDefaults.standard.string(forKey: "height") else {
+    guard let height = itemInputs[.height] else {
       showAlert("키(cm)를 입력해주세요")
       return
     }
     
-    guard let weight = UserDefaults.standard.string(forKey: "weight") else {
+    guard let weight = itemInputs[.weight] else {
       showAlert("몸무게(kg)을 입력헤주세요")
       return
     }
+//    guard let nickname = UserDefaults.standard.string(forKey: "nickname") else {
+//      showAlert("닉네임을 입력해주세요")
+//      return
+//    }
+//
+//    guard let height = UserDefaults.standard.string(forKey: "height") else {
+//      showAlert("키(cm)를 입력해주세요")
+//      return
+//    }
+//
+//    guard let weight = UserDefaults.standard.string(forKey: "weight") else {
+//      showAlert("몸무게(kg)을 입력헤주세요")
+//      return
+//    }
     
     let h = Double(height) ?? 0
     let w = Double(weight) ?? 0
@@ -86,6 +101,7 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: UITextFieldDelegate {
   func textFieldDidEndEditing(_ textField: UITextField) {
     let item = items[textField.tag]
+    itemInputs[item] = textField.text
     UserDefaults.standard.set(textField.text, forKey: "\(item)")
   }
 }
