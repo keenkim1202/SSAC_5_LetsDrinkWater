@@ -24,6 +24,7 @@ class ProfileViewController: UIViewController {
   
   // MARK: Properties
   fileprivate var items: [Item] = [.image, .nickname, .height, .weight]
+  fileprivate var itemInputs: [Item: String] = [:]
   
   // MARK: UI
   @IBOutlet weak var tableView: UITableView!
@@ -38,12 +39,32 @@ class ProfileViewController: UIViewController {
   
   // MARK: Action
   @IBAction func onDoneButton(_ sender: Any) {
+    self.tableView.endEditing(true)
+    
+    guard let nickname = itemInputs[.nickname] else {
+      print("nickname empty")
+      return
+    }
+    
+    guard let height = itemInputs[.height] else {
+      print("height empty")
+      return
+    }
+    
+    guard let weight = itemInputs[.weight] else {
+      print("weight empty")
+      return
+    }
   }
   
 }
 
 // MARK: UITextFieldDelegate
 extension ProfileViewController: UITextFieldDelegate {
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    let item = items[textField.tag]
+    itemInputs[item] = textField.text
+  }
 }
 
 // MARK: UITableViewDataSource
