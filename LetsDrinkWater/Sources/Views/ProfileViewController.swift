@@ -24,6 +24,7 @@ class ProfileViewController: UIViewController {
   
   // MARK: Properties
   fileprivate var items: [Item] = [.image, .nickname, .height, .weight]
+  fileprivate var itemInputs: [Item: String] = [:]
   
   // MARK: UI
   @IBOutlet weak var tableView: UITableView!
@@ -36,10 +37,58 @@ class ProfileViewController: UIViewController {
     tableView.dataSource = self
   }
   
+  // MARK: Action
+  @IBAction func onDoneButton(_ sender: UIBarButtonItem) {
+    self.tableView.endEditing(true)
+    
+    guard let nickname = itemInputs[.nickname] else {
+      showAlert("닉네임을 입력해주세요")
+      return
+    }
+    
+    guard let height = itemInputs[.height] else {
+      showAlert("키(cm)를 입력해주세요")
+      return
+    }
+    
+    guard let weight = itemInputs[.weight] else {
+      showAlert("몸무게(kg)을 입력헤주세요")
+      return
+    }
+    print(itemInputs)
+    guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "drinkWaterVC") as? DrinkWaterViewController else { return }
+    let h = Double(height) ?? 0
+    let w = Double(weight) ?? 0
+    let total = (h + w) / 100
+    
+    vc.name = nickname
+    vc.totalDrink = total
+    print("onDone - ", vc.name, vc.totalDrink)
+
+    // TODO: popViewController 시 데이터 전달 안되는 부분 수정.
+    vc.modalPresentationStyle = .fullScreen
+    self.present(vc, animated: true, completion: nil)
+//    self.navigationController?.popViewController(animated: true)
+  }
+  
+  // MARK: Alert
+  fileprivate func showAlert(_ message: String) {
+    UIAlertController
+      .show(self, contentType: .error, message: message)
+  }
+  
+  // MARK: Action
+  @IBAction func onBackButton(_ sender: UIBarButtonItem) {
+    self.navigationController?.popViewController(animated: true)
+  }
 }
 
 // MARK: UITextFieldDelegate
 extension ProfileViewController: UITextFieldDelegate {
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    let item = items[textField.tag]
+    itemInputs[item] = textField.text
+  }
 }
 
 // MARK: UITableViewDataSource
@@ -51,7 +100,7 @@ extension ProfileViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let item = items[indexPath.row]
     let cell = item.dequeueCell(tableView) as! ProfileTableViewCell
-    
+    cell.selectionStyle = .none
     if let textField = cell.answerTextField {
       textField.delegate = self
       textField.tag = indexPath.row
