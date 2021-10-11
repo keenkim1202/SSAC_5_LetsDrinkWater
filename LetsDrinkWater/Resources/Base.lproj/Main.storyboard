@@ -135,7 +135,7 @@
                         <outlet property="drinkAmountLabel" destination="8ho-2m-wr2" id="mKK-hH-XvO"/>
                         <outlet property="goalLabel" destination="nMG-B2-aKJ" id="OFG-Xv-0kY"/>
                         <outlet property="sacImageView" destination="ehE-6b-fLG" id="Mbn-ss-zIm"/>
-                        <outlet property="totalDrinktLabel" destination="ngi-Qk-FhO" id="gVC-sN-Ucb"/>
+                        <outlet property="totalDrinkLabel" destination="ngi-Qk-FhO" id="LCZ-1p-LO9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
