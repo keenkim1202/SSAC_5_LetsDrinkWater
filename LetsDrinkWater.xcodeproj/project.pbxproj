@@ -19,6 +19,7 @@
 		1C2B4726271407CC0044D672 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2B4725271407CC0044D672 /* ProfileTableViewCell.swift */; };
 		1C2B472B271432240044D672 /* LetsDrinkWater++UIAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2B472A271432240044D672 /* LetsDrinkWater++UIAlert.swift */; };
 		1C2B472D27146E760044D672 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2B472C27146E760044D672 /* User.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +33,10 @@
 		1C2B47132713FFA60044D672 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C2B47192714020B0044D672 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1C2B4725271407CC0044D672 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+
 		1C2B472A271432240044D672 /* LetsDrinkWater++UIAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LetsDrinkWater++UIAlert.swift"; sourceTree = "<group>"; };
 		1C2B472C27146E760044D672 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,7 @@
 			children = (
 				1C2B47052713FFA50044D672 /* AppDelegate.swift */,
 				1C2B47072713FFA50044D672 /* SceneDelegate.swift */,
+				1C2B472727142E020044D672 /* Model */,
 				1C2B471B271403590044D672 /* Views */,
 				1C2B472C27146E760044D672 /* User.swift */,
 			);
@@ -113,6 +117,14 @@
 				1C2B47132713FFA60044D672 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1C2B472727142E020044D672 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1C2B472827142E0E0044D672 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +209,7 @@
 				1C2B470A2713FFA50044D672 /* DrinkWaterViewController.swift in Sources */,
 				1C2B472B271432240044D672 /* LetsDrinkWater++UIAlert.swift in Sources */,
 				1C2B47062713FFA50044D672 /* AppDelegate.swift in Sources */,
+				1C2B472927142E0E0044D672 /* User.swift in Sources */,
 				1C2B471A2714020B0044D672 /* ProfileViewController.swift in Sources */,
 				1C2B4726271407CC0044D672 /* ProfileTableViewCell.swift in Sources */,
 				1C2B47082713FFA50044D672 /* SceneDelegate.swift in Sources */,
