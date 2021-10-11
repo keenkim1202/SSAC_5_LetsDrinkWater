@@ -38,7 +38,7 @@ class ProfileViewController: UIViewController {
   }
   
   // MARK: Action
-  @IBAction func onDoneButton(_ sender: Any) {
+  @IBAction func onDoneButton(_ sender: UIBarButtonItem) {
     self.tableView.endEditing(true)
     
     guard let nickname = itemInputs[.nickname] else {
@@ -55,6 +55,20 @@ class ProfileViewController: UIViewController {
       showAlert("몸무게(kg)을 입력헤주세요")
       return
     }
+    print(itemInputs)
+    guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "drinkWaterVC") as? DrinkWaterViewController else { return }
+    let h = Double(height) ?? 0
+    let w = Double(weight) ?? 0
+    let total = (h + w) / 100
+    
+    vc.name = nickname
+    vc.totalDrink = total
+    print("onDone - ", vc.name, vc.totalDrink)
+
+    // TODO: popViewController 시 데이터 전달 안되는 부분 수정.
+    vc.modalPresentationStyle = .fullScreen
+    self.present(vc, animated: true, completion: nil)
+//    self.navigationController?.popViewController(animated: true)
   }
   
   // MARK: Alert
@@ -63,6 +77,10 @@ class ProfileViewController: UIViewController {
       .show(self, contentType: .error, message: message)
   }
   
+  // MARK: Action
+  @IBAction func onBackButton(_ sender: UIBarButtonItem) {
+    self.navigationController?.popViewController(animated: true)
+  }
 }
 
 // MARK: UITextFieldDelegate
@@ -82,7 +100,7 @@ extension ProfileViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let item = items[indexPath.row]
     let cell = item.dequeueCell(tableView) as! ProfileTableViewCell
-    
+    cell.selectionStyle = .none
     if let textField = cell.answerTextField {
       textField.delegate = self
       textField.tag = indexPath.row

@@ -11,7 +11,7 @@
         <!--물 마시기-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="DrinkWaterViewController" customModule="LetsDrinkWater" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="drinkWaterVC" id="BYZ-38-t0r" customClass="DrinkWaterViewController" customModule="LetsDrinkWater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,7 +73,7 @@
                                     <action selector="onDrinkButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gHR-FA-wtA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nickname님의 하루 물 권장 섭취량은 0L 입니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsZ-b3-8kG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="프로필을 설정해주세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsZ-b3-8kG">
                                 <rect key="frame" x="0.0" y="782" width="414" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -123,29 +123,33 @@
                     <navigationItem key="navigationItem" title="물 마시기" id="M9M-m3-qqe">
                         <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="PDD-JP-BKP">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onReset:" destination="BYZ-38-t0r" id="9ko-2t-O8B"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="person.circle" catalog="system" id="fb8-gq-M6a">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="i4B-fO-bJl" kind="show" id="7LS-kz-F5n"/>
+                                <action selector="onProfileButton:" destination="BYZ-38-t0r" id="r7J-mC-Gyh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="dailyAmountLabel" destination="QsZ-b3-8kG" id="ePq-jb-wKZ"/>
                         <outlet property="drinkAmountLabel" destination="8ho-2m-wr2" id="mKK-hH-XvO"/>
+                        <outlet property="drunkenLabel" destination="ngi-Qk-FhO" id="dEA-CD-jbb"/>
                         <outlet property="goalLabel" destination="nMG-B2-aKJ" id="OFG-Xv-0kY"/>
                         <outlet property="sacImageView" destination="ehE-6b-fLG" id="Mbn-ss-zIm"/>
-                        <outlet property="totalDrinkLabel" destination="ngi-Qk-FhO" id="LCZ-1p-LO9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1031.8840579710145" y="118.52678571428571"/>
         </scene>
-        <!--프로필-->
+        <!--profileVC-->
         <scene sceneID="lBl-uB-aCi">
             <objects>
-                <viewController id="i4B-fO-bJl" customClass="ProfileViewController" customModule="LetsDrinkWater" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profileVC" title="profileVC" id="i4B-fO-bJl" customClass="ProfileViewController" customModule="LetsDrinkWater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NaZ-vg-FLd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -319,6 +323,12 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="프로필" id="3Yr-1a-HJ0">
+                        <barButtonItem key="leftBarButtonItem" title="뒤로" id="9ZE-46-1rk">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onBackButton:" destination="i4B-fO-bJl" id="X3P-Md-dun"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="저장" id="3DD-Gm-1FY">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -333,12 +343,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XD4-B2-xW2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1779.7101449275365" y="118.52678571428571"/>
+            <point key="canvasLocation" x="1032" y="877"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZUF-Xt-dke">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gdz-3u-Gvp" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="drinkWaterNC" automaticallyAdjustsScrollViewInsets="NO" id="gdz-3u-Gvp" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pCd-CM-Th3">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -352,6 +362,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7eM-RW-GBT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="121.73913043478262" y="118.52678571428571"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dAC-Cf-C2V">
+            <objects>
+                <navigationController storyboardIdentifier="profileNC" automaticallyAdjustsScrollViewInsets="NO" id="CvF-e6-TcK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Cw2-bF-AZT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="i4B-fO-bJl" kind="relationship" relationship="rootViewController" id="9xh-am-KjQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lTm-e8-sj0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="122" y="877"/>
         </scene>
     </scenes>
     <designables>
