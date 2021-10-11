@@ -60,7 +60,10 @@ class DrinkWaterViewController: UIViewController {
       goalLabel.text = "목표의 \(goal)%"
     }
     
-    changeImage(goal)
+    if goal < 100 {
+      changeImage(goal)
+    }
+    
   }
   
   func changeImage(_ goal: Double) {
