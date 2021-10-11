@@ -17,6 +17,7 @@
 		1C2B4721271405370044D672 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 1C2B4720271405370044D672 /* TextFieldEffects */; };
 		1C2B4724271405420044D672 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1C2B4723271405420044D672 /* IQKeyboardManagerSwift */; };
 		1C2B4726271407CC0044D672 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2B4725271407CC0044D672 /* ProfileTableViewCell.swift */; };
+		1C2B472B271432240044D672 /* LetsDrinkWater++UIAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2B472A271432240044D672 /* LetsDrinkWater++UIAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		1C2B47132713FFA60044D672 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C2B47192714020B0044D672 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1C2B4725271407CC0044D672 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		1C2B472A271432240044D672 /* LetsDrinkWater++UIAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LetsDrinkWater++UIAlert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			children = (
 				1C2B47092713FFA50044D672 /* DrinkWaterViewController.swift */,
 				1C2B47192714020B0044D672 /* ProfileViewController.swift */,
+				1C2B472A271432240044D672 /* LetsDrinkWater++UIAlert.swift */,
 				1C2B4725271407CC0044D672 /* ProfileTableViewCell.swift */,
 			);
 			path = Views;
@@ -189,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C2B470A2713FFA50044D672 /* DrinkWaterViewController.swift in Sources */,
+				1C2B472B271432240044D672 /* LetsDrinkWater++UIAlert.swift in Sources */,
 				1C2B47062713FFA50044D672 /* AppDelegate.swift in Sources */,
 				1C2B471A2714020B0044D672 /* ProfileViewController.swift in Sources */,
 				1C2B4726271407CC0044D672 /* ProfileTableViewCell.swift in Sources */,

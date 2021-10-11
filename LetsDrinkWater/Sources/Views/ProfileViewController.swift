@@ -42,19 +42,25 @@ class ProfileViewController: UIViewController {
     self.tableView.endEditing(true)
     
     guard let nickname = itemInputs[.nickname] else {
-      print("nickname empty")
+      showAlert("닉네임을 입력해주세요")
       return
     }
     
     guard let height = itemInputs[.height] else {
-      print("height empty")
+      showAlert("키(cm)를 입력해주세요")
       return
     }
     
     guard let weight = itemInputs[.weight] else {
-      print("weight empty")
+      showAlert("몸무게(kg)을 입력헤주세요")
       return
     }
+  }
+  
+  // MARK: Alert
+  fileprivate func showAlert(_ message: String) {
+    UIAlertController
+      .show(self, contentType: .error, message: message)
   }
   
 }
