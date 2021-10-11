@@ -25,19 +25,19 @@ class DrinkWaterViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     dailyAmountLabel.text = "프로필을 설정해주세요 :>"
+    UserDefaults.standard.set(1, forKey: "imageGrade")
   }
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(true)
     
-    let userName = UserDefaults.standard.string(forKey: "usrName")
+    let userName = UserDefaults.standard.string(forKey: "nickname")
     
     if userName != nil  {
-      let userName = UserDefaults.standard.string(forKey: "usrName")!
-      let userTotal = UserDefaults.standard.string(forKey: "usrTotal")!
+      let userName = UserDefaults.standard.string(forKey: "nickname")!
+      let userTotal = UserDefaults.standard.string(forKey: "total")!
       dailyAmountLabel.text = "\(userName)님 하루 물 권장 섭취량은 \(userTotal)L 입니다."
     } else {
-      print(UserDefaults.standard.string(forKey: "usrNickName") ?? "none")
       dailyAmountLabel.text = "프로필을 다시 설정해주세요 :<"
     }
   }
@@ -51,7 +51,7 @@ class DrinkWaterViewController: UIViewController {
       drunkenLabel.text = "\(drunken)ml"
     }
     // 목표량
-    let userTotal = UserDefaults.standard.double(forKey: "usrTotal")
+    let userTotal = UserDefaults.standard.double(forKey: "total")
     goal = (drunken / (userTotal * 1000)) * 100
     
     if goal >= 100 {
@@ -64,13 +64,14 @@ class DrinkWaterViewController: UIViewController {
     if goal < 100 {
       changeImage(goal)
     }
-    
   }
   
   func changeImage(_ goal: Double) {
     let grade = floor(goal / 10)
+    
+    UserDefaults.standard.set(grade, forKey: "imageGrade")
     switch grade {
-    case 0, 1:
+    case 1:
       sacImageView.image = UIImage(named: "1-1")
     case 2:
       sacImageView.image = UIImage(named: "1-2")

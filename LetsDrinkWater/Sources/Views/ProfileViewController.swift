@@ -24,7 +24,6 @@ class ProfileViewController: UIViewController {
   
   // MARK: Properties
   fileprivate var items: [Item] = [.image, .nickname, .height, .weight]
-  fileprivate var itemInputs: [Item: String] = [:]
   
   // MARK: UI
   @IBOutlet weak var tableView: UITableView!
@@ -32,7 +31,6 @@ class ProfileViewController: UIViewController {
   // MARK: View Life-Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     tableView.delegate = self
     tableView.dataSource = self
   }
@@ -41,17 +39,17 @@ class ProfileViewController: UIViewController {
   @IBAction func onDoneButton(_ sender: UIBarButtonItem) {
     self.tableView.endEditing(true)
     
-    guard let nickname = itemInputs[.nickname] else {
+    guard let nickname = UserDefaults.standard.string(forKey: "nickname") else {
       showAlert("닉네임을 입력해주세요")
       return
     }
     
-    guard let height = itemInputs[.height] else {
+    guard let height = UserDefaults.standard.string(forKey: "height") else {
       showAlert("키(cm)를 입력해주세요")
       return
     }
     
-    guard let weight = itemInputs[.weight] else {
+    guard let weight = UserDefaults.standard.string(forKey: "weight") else {
       showAlert("몸무게(kg)을 입력헤주세요")
       return
     }
@@ -60,8 +58,10 @@ class ProfileViewController: UIViewController {
     let w = Double(weight) ?? 0
     let total = (h + w) / 100
     
-    UserDefaults.standard.set(nickname, forKey: "usrName")
-    UserDefaults.standard.set(total, forKey: "usrTotal")
+    UserDefaults.standard.set(nickname, forKey: "name")
+    UserDefaults.standard.set(height, forKey: "height")
+    UserDefaults.standard.set(weight, forKey: "weight")
+    UserDefaults.standard.set(total, forKey: "total")
     
     self.navigationController?.popViewController(animated: true)
   }
@@ -82,7 +82,8 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: UITextFieldDelegate {
   func textFieldDidEndEditing(_ textField: UITextField) {
     let item = items[textField.tag]
-    itemInputs[item] = textField.text
+    print(item)
+    UserDefaults.standard.set(textField.text, forKey: "\(item)")
   }
 }
 
@@ -95,11 +96,25 @@ extension ProfileViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let item = items[indexPath.row]
     let cell = item.dequeueCell(tableView) as! ProfileTableViewCell
-    cell.selectionStyle = .none
+  
     if let textField = cell.answerTextField {
       textField.delegate = self
       textField.tag = indexPath.row
     }
+    
+    switch item {
+    case .image:
+      let grade = UserDefaults.standard.integer(forKey: "imageGrade")
+      cell.sacImageView.image = UIImage(named: "1-\(grade)")
+    case .nickname:
+      cell.answerTextField.text = UserDefaults.standard.string(forKey: "nickname")
+    case .height:
+      cell.answerTextField.text = UserDefaults.standard.string(forKey: "height")
+    case .weight:
+      cell.answerTextField.text = UserDefaults.standard.string(forKey: "weight")
+    }
+    
+    cell.selectionStyle = .none
     return cell
   }
   
