@@ -6,9 +6,9 @@
 //
 
 import UIKit
+import TextFieldEffects
 
 class ProfileTableViewCell: UITableViewCell {
   @IBOutlet weak var sacImageView: UIImageView!
-  @IBOutlet weak var questionLabel: UILabel!
-  @IBOutlet weak var answerTextField: UITextField!
+  @IBOutlet weak var answerTextField: HoshiTextField!
 }

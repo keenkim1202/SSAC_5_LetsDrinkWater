@@ -66,7 +66,7 @@ extension ProfileViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     switch items[indexPath.row] {
     case .image: return CGFloat(150)
-    default: return CGFloat(80)
+    default: return CGFloat(65)
     }
   }
   
@@ -74,8 +74,8 @@ extension ProfileViewController: UITableViewDelegate {
     _ tableView: UITableView,
     estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
       switch items[indexPath.row] {
-      case .image:  return CGFloat(216)
-      default:      return CGFloat(96)
+      case .image:  return CGFloat(150)
+      default:      return CGFloat(65)
     }
   }
   

@@ -179,124 +179,130 @@
                                             <outlet property="sacImageView" destination="gAk-0k-gNh" id="OWL-Re-f8G"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="nicknameCell" rowHeight="80" id="0Tg-Ov-U0h" customClass="ProfileTableViewCell" customModule="LetsDrinkWater" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="194.5" width="414" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="nicknameCell" rowHeight="65" id="0Tg-Ov-U0h" customClass="ProfileTableViewCell" customModule="LetsDrinkWater" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="194.5" width="414" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Tg-Ov-U0h" id="RgP-Az-HED">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Blu-6T-BBV">
-                                                    <rect key="frame" x="16" y="13.5" width="382" height="53"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임을 설정해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EnJ-l9-on5">
-                                                            <rect key="frame" x="0.0" y="0.0" width="116.5" height="16"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kqq-ia-1a9">
-                                                            <rect key="frame" x="0.0" y="19" width="382" height="34"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
-                                                        </textField>
-                                                    </subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임을 설정해주세요" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Kqq-ia-1a9" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                                    <rect key="frame" x="16" y="7.5" width="382" height="50"/>
                                                     <constraints>
-                                                        <constraint firstItem="Kqq-ia-1a9" firstAttribute="leading" secondItem="Blu-6T-BBV" secondAttribute="leading" id="AXI-TF-Nge"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Kqq-ia-1a9" secondAttribute="trailing" id="PDZ-Xd-SiC"/>
+                                                        <constraint firstAttribute="height" constant="50" id="vin-JT-76d"/>
                                                     </constraints>
-                                                </stackView>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                            <color key="value" systemColor="systemYellowColor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Blu-6T-BBV" firstAttribute="leading" secondItem="RgP-Az-HED" secondAttribute="leading" constant="16" id="MQJ-k0-gHy"/>
-                                                <constraint firstAttribute="trailing" secondItem="Blu-6T-BBV" secondAttribute="trailing" constant="16" id="R4A-cr-ObK"/>
-                                                <constraint firstItem="Blu-6T-BBV" firstAttribute="centerY" secondItem="RgP-Az-HED" secondAttribute="centerY" id="mTx-1d-sKi"/>
+                                                <constraint firstAttribute="trailing" secondItem="Kqq-ia-1a9" secondAttribute="trailing" constant="16" id="39w-KK-Qxg"/>
+                                                <constraint firstItem="Kqq-ia-1a9" firstAttribute="leading" secondItem="RgP-Az-HED" secondAttribute="leading" constant="16" id="57U-9J-kgE"/>
+                                                <constraint firstItem="Kqq-ia-1a9" firstAttribute="centerY" secondItem="RgP-Az-HED" secondAttribute="centerY" id="tkV-De-wZ7"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="answerTextField" destination="Kqq-ia-1a9" id="aY8-k0-ocJ"/>
-                                            <outlet property="questionLabel" destination="EnJ-l9-on5" id="7U3-dD-Pyd"/>
+                                            <outlet property="answerTextField" destination="Kqq-ia-1a9" id="dTw-mw-Eao"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="heightCell" rowHeight="80" id="2Fu-af-jiw" customClass="ProfileTableViewCell" customModule="LetsDrinkWater" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="274.5" width="414" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="heightCell" rowHeight="65" id="2Fu-af-jiw" customClass="ProfileTableViewCell" customModule="LetsDrinkWater" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="259.5" width="414" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Fu-af-jiw" id="YcY-Sf-T2O">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="XFT-dU-6Ha">
-                                                    <rect key="frame" x="16" y="13.5" width="382" height="53"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="키(cm)를 설정해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07d-RN-2qV">
-                                                            <rect key="frame" x="0.0" y="0.0" width="122" height="16"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kyC-db-cEU">
-                                                            <rect key="frame" x="0.0" y="19" width="382" height="34"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
-                                                        </textField>
-                                                    </subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="키(cm)를 설정해주세요" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="kyC-db-cEU" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                                    <rect key="frame" x="16" y="7.5" width="382" height="50"/>
                                                     <constraints>
-                                                        <constraint firstItem="kyC-db-cEU" firstAttribute="leading" secondItem="XFT-dU-6Ha" secondAttribute="leading" id="LL4-N7-bLd"/>
-                                                        <constraint firstAttribute="trailing" secondItem="kyC-db-cEU" secondAttribute="trailing" id="PJr-MM-Wdz"/>
+                                                        <constraint firstAttribute="height" constant="50" id="tH9-6k-fWb"/>
                                                     </constraints>
-                                                </stackView>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                            <color key="value" systemColor="systemYellowColor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="XFT-dU-6Ha" firstAttribute="leading" secondItem="YcY-Sf-T2O" secondAttribute="leading" constant="16" id="7W2-zH-Xv7"/>
-                                                <constraint firstAttribute="trailing" secondItem="XFT-dU-6Ha" secondAttribute="trailing" constant="16" id="BQd-AW-GLl"/>
-                                                <constraint firstItem="XFT-dU-6Ha" firstAttribute="centerY" secondItem="YcY-Sf-T2O" secondAttribute="centerY" id="tzB-T2-fTb"/>
+                                                <constraint firstItem="kyC-db-cEU" firstAttribute="centerY" secondItem="YcY-Sf-T2O" secondAttribute="centerY" id="JVQ-eo-808"/>
+                                                <constraint firstAttribute="trailing" secondItem="kyC-db-cEU" secondAttribute="trailing" constant="16" id="saL-ZV-pws"/>
+                                                <constraint firstItem="kyC-db-cEU" firstAttribute="leading" secondItem="YcY-Sf-T2O" secondAttribute="leading" constant="16" id="yTG-am-yNy"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="answerTextField" destination="kyC-db-cEU" id="Jfx-ia-hg5"/>
-                                            <outlet property="questionLabel" destination="07d-RN-2qV" id="9R6-vl-sbe"/>
+                                            <outlet property="answerTextField" destination="kyC-db-cEU" id="28C-BC-qFq"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="weightCell" rowHeight="80" id="RY9-ac-eS8" customClass="ProfileTableViewCell" customModule="LetsDrinkWater" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="354.5" width="414" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="weightCell" rowHeight="65" id="RY9-ac-eS8" customClass="ProfileTableViewCell" customModule="LetsDrinkWater" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="324.5" width="414" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RY9-ac-eS8" id="zqj-le-fpT">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="0Xz-FD-Sg7">
-                                                    <rect key="frame" x="16" y="13.5" width="382" height="53"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="몸무게(kg)을 설정해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wle-G1-z4x">
-                                                            <rect key="frame" x="0.0" y="0.0" width="140.5" height="16"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aJr-M0-uyq">
-                                                            <rect key="frame" x="0.0" y="19" width="382" height="34"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
-                                                        </textField>
-                                                    </subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="몸무게(kg)을 설정해주세요" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="aJr-M0-uyq" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                                    <rect key="frame" x="16" y="7.5" width="382" height="50"/>
                                                     <constraints>
-                                                        <constraint firstItem="aJr-M0-uyq" firstAttribute="leading" secondItem="0Xz-FD-Sg7" secondAttribute="leading" id="0mL-KZ-PTY"/>
-                                                        <constraint firstAttribute="trailing" secondItem="aJr-M0-uyq" secondAttribute="trailing" id="BA9-1q-V0G"/>
+                                                        <constraint firstAttribute="height" constant="50" id="Zct-xl-nnD"/>
                                                     </constraints>
-                                                </stackView>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                            <color key="value" systemColor="systemYellowColor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="0Xz-FD-Sg7" firstAttribute="centerY" secondItem="zqj-le-fpT" secondAttribute="centerY" id="Mjp-Pb-h6Z"/>
-                                                <constraint firstItem="0Xz-FD-Sg7" firstAttribute="leading" secondItem="zqj-le-fpT" secondAttribute="leading" constant="16" id="fX2-Ms-oM9"/>
-                                                <constraint firstAttribute="trailing" secondItem="0Xz-FD-Sg7" secondAttribute="trailing" constant="16" id="hTK-IW-oeG"/>
+                                                <constraint firstAttribute="trailing" secondItem="aJr-M0-uyq" secondAttribute="trailing" constant="16" id="RBE-FU-07u"/>
+                                                <constraint firstItem="aJr-M0-uyq" firstAttribute="centerY" secondItem="zqj-le-fpT" secondAttribute="centerY" id="gcy-Be-Gcr"/>
+                                                <constraint firstItem="aJr-M0-uyq" firstAttribute="leading" secondItem="zqj-le-fpT" secondAttribute="leading" constant="16" id="xBn-Y5-TuB"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="answerTextField" destination="aJr-M0-uyq" id="OB6-8G-1z7"/>
-                                            <outlet property="questionLabel" destination="Wle-G1-z4x" id="3K5-vJ-9qA"/>
+                                            <outlet property="answerTextField" destination="aJr-M0-uyq" id="XwP-2Z-Ef8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -345,6 +351,17 @@
             <point key="canvasLocation" x="121.73913043478262" y="118.52678571428571"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Kqq-ia-1a9">
+            <size key="intrinsicContentSize" width="125" height="18.5"/>
+        </designable>
+        <designable name="aJr-M0-uyq">
+            <size key="intrinsicContentSize" width="151" height="18.5"/>
+        </designable>
+        <designable name="kyC-db-cEU">
+            <size key="intrinsicContentSize" width="131" height="18.5"/>
+        </designable>
+    </designables>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="1-1" width="152" height="151"/>
@@ -352,6 +369,9 @@
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
