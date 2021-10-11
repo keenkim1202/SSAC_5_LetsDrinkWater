@@ -42,6 +42,10 @@ class DrinkWaterViewController: UIViewController {
     }
   }
   
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+    self.view.endEditing(true)
+  }
+  
   // MARK: Action
   @IBAction func onDrinkButton(_ sender: UIBarButtonItem) {
     let input: String = drinkAmountLabel.text!

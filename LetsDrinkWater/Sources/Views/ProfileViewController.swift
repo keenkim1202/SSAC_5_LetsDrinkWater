@@ -35,6 +35,10 @@ class ProfileViewController: UIViewController {
     tableView.dataSource = self
   }
   
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+    self.view.endEditing(true)
+  }
+  
   // MARK: Action
   @IBAction func onDoneButton(_ sender: UIBarButtonItem) {
     self.tableView.endEditing(true)
@@ -82,7 +86,6 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: UITextFieldDelegate {
   func textFieldDidEndEditing(_ textField: UITextField) {
     let item = items[textField.tag]
-    print(item)
     UserDefaults.standard.set(textField.text, forKey: "\(item)")
   }
 }
