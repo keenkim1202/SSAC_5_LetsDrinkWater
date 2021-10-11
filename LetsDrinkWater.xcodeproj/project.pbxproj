@@ -17,6 +17,7 @@
 		1C2B4721271405370044D672 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 1C2B4720271405370044D672 /* TextFieldEffects */; };
 		1C2B4724271405420044D672 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1C2B4723271405420044D672 /* IQKeyboardManagerSwift */; };
 		1C2B4726271407CC0044D672 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2B4725271407CC0044D672 /* ProfileTableViewCell.swift */; };
+		1C2B472927142E0E0044D672 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2B472827142E0E0044D672 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		1C2B47132713FFA60044D672 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C2B47192714020B0044D672 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1C2B4725271407CC0044D672 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		1C2B472827142E0E0044D672 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			children = (
 				1C2B47052713FFA50044D672 /* AppDelegate.swift */,
 				1C2B47072713FFA50044D672 /* SceneDelegate.swift */,
+				1C2B472727142E020044D672 /* Model */,
 				1C2B471B271403590044D672 /* Views */,
 			);
 			path = Sources;
@@ -107,6 +110,14 @@
 				1C2B47132713FFA60044D672 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1C2B472727142E020044D672 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1C2B472827142E0E0044D672 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +201,7 @@
 			files = (
 				1C2B470A2713FFA50044D672 /* DrinkWaterViewController.swift in Sources */,
 				1C2B47062713FFA50044D672 /* AppDelegate.swift in Sources */,
+				1C2B472927142E0E0044D672 /* User.swift in Sources */,
 				1C2B471A2714020B0044D672 /* ProfileViewController.swift in Sources */,
 				1C2B4726271407CC0044D672 /* ProfileTableViewCell.swift in Sources */,
 				1C2B47082713FFA50044D672 /* SceneDelegate.swift in Sources */,
