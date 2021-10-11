@@ -59,6 +59,34 @@ class DrinkWaterViewController: UIViewController {
     } else {
       goalLabel.text = "목표의 \(goal)%"
     }
+    
+    changeImage(goal)
+  }
+  
+  func changeImage(_ goal: Double) {
+    let grade = floor(goal / 10)
+    switch grade {
+    case 0, 1:
+      sacImageView.image = UIImage(named: "1-1")
+    case 2:
+      sacImageView.image = UIImage(named: "1-2")
+    case 3:
+      sacImageView.image = UIImage(named: "1-3")
+    case 4:
+      sacImageView.image = UIImage(named: "1-4")
+    case 5:
+      sacImageView.image = UIImage(named: "1-5")
+    case 6:
+      sacImageView.image = UIImage(named: "1-6")
+    case 7:
+      sacImageView.image = UIImage(named: "1-7")
+    case 8:
+      sacImageView.image = UIImage(named: "1-8")
+    case 9:
+      sacImageView.image = UIImage(named: "1-9")
+    default:
+      sacImageView.image = UIImage(named: "1-1")
+    }
   }
   
   @IBAction func onReset(_ sender: UIBarButtonItem) {
