@@ -28,7 +28,17 @@ class DrinkWaterViewController: UIViewController {
     congratsLabel.textColor = .clear
     UserDefaults.standard.set(1, forKey: "imageGrade")
   }
-
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    self.setImageAnimation()
+  }
+  
+  override func viewDidDisappear(_ animated: Bool) {
+    super.viewDidDisappear(animated)
+    self.setImageOriginal()
+  }
+  
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(true)
     
@@ -45,10 +55,6 @@ class DrinkWaterViewController: UIViewController {
       dailyAmountLabel.textColor = .systemYellow
       dailyAmountLabel.font = .boldSystemFont(ofSize: 20)
     }
-  }
-  
-  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    self.view.endEditing(true)
   }
   
   // MARK: Action
@@ -117,7 +123,22 @@ class DrinkWaterViewController: UIViewController {
     guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "profileVC") as? ProfileViewController else { return }
     self.navigationController?.pushViewController(vc, animated: true)
   }
-  
 }
 
-
+// MARK: Extensions
+extension DrinkWaterViewController {
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    self.view.endEditing(true)
+  }
+  
+  private func setImageAnimation() {
+    UIView.animate(withDuration: 1.5, delay: 0, options: [.repeat, .autoreverse, .beginFromCurrentState]) {
+      self.sacImageView.transform = CGAffineTransform(translationX: 0, y: 0).scaledBy(x: 0.9, y: 0.9)
+    }
+  }
+  
+  private func setImageOriginal() {
+    self.sacImageView.layer.removeAllAnimations()
+    self.sacImageView.transform = .identity
+  }
+}

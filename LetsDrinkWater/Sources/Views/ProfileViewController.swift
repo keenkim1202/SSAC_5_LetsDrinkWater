@@ -36,10 +36,6 @@ class ProfileViewController: UIViewController {
     tableView.dataSource = self
   }
   
-  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    self.view.endEditing(true)
-  }
-  
   // MARK: Action
   @IBAction func onDoneButton(_ sender: UIBarButtonItem) {
     self.tableView.endEditing(true)
@@ -74,6 +70,13 @@ class ProfileViewController: UIViewController {
   // MARK: Action
   @IBAction func onBackButton(_ sender: UIBarButtonItem) {
     self.navigationController?.popViewController(animated: true)
+  }
+}
+
+// MARK: Extensions
+extension ProfileViewController {
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    self.view.endEditing(true)
   }
 }
 
