@@ -44,26 +44,20 @@ class ProfileViewController: UIViewController {
   @IBAction func onDoneButton(_ sender: UIBarButtonItem) {
     self.tableView.endEditing(true)
     
-    guard let nickname = itemInputs[.nickname] else {
-      showAlert("닉네임을 입력해주세요")
-      return
-    }
+    guard let nickname = itemInputs[.nickname] else { return }
+    if nickname.isEmpty { showAlert("닉네임을 입력해주세요") }
+
+    guard let height = itemInputs[.height] else { return }
+    if height.isEmpty { showAlert("키(cm)를 입력해주세요") }
     
-    guard let height = itemInputs[.height] else {
-      showAlert("키(cm)를 입력해주세요")
-      return
-    }
-    
-    guard let weight = itemInputs[.weight] else {
-      showAlert("몸무게(kg)을 입력헤주세요")
-      return
-    }
+    guard let weight = itemInputs[.weight] else { return }
+    if weight.isEmpty { showAlert("몸무게(kg)을 입력헤주세요") }
     
     let h = Double(height) ?? 0
     let w = Double(weight) ?? 0
     let total = (h + w) / 100
     
-    UserDefaults.standard.set(nickname, forKey: "name")
+    UserDefaults.standard.set(nickname, forKey: "nickname")
     UserDefaults.standard.set(height, forKey: "height")
     UserDefaults.standard.set(weight, forKey: "weight")
     UserDefaults.standard.set(total, forKey: "total")
@@ -91,7 +85,6 @@ extension ProfileViewController: UITextFieldDelegate {
       itemInputs[item] = textField.text
     }
     itemInputs[item] = textField.text
-    UserDefaults.standard.set(textField.text, forKey: "\(item)")
   }
 }
 
@@ -116,12 +109,14 @@ extension ProfileViewController: UITableViewDataSource {
       cell.sacImageView.image = UIImage(named: "1-\(grade)")
     case .nickname:
       cell.answerTextField.text = UserDefaults.standard.string(forKey: "nickname")
+      itemInputs[item] = cell.answerTextField.text
     case .height:
       cell.answerTextField.text = UserDefaults.standard.string(forKey: "height")
+      itemInputs[item] = cell.answerTextField.text
     case .weight:
       cell.answerTextField.text = UserDefaults.standard.string(forKey: "weight")
+      itemInputs[item] = cell.answerTextField.text
     }
-    
     cell.selectionStyle = .none
     return cell
   }
