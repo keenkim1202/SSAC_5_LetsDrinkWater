@@ -58,20 +58,6 @@ class ProfileViewController: UIViewController {
       showAlert("몸무게(kg)을 입력헤주세요")
       return
     }
-//    guard let nickname = UserDefaults.standard.string(forKey: "nickname") else {
-//      showAlert("닉네임을 입력해주세요")
-//      return
-//    }
-//
-//    guard let height = UserDefaults.standard.string(forKey: "height") else {
-//      showAlert("키(cm)를 입력해주세요")
-//      return
-//    }
-//
-//    guard let weight = UserDefaults.standard.string(forKey: "weight") else {
-//      showAlert("몸무게(kg)을 입력헤주세요")
-//      return
-//    }
     
     let h = Double(height) ?? 0
     let w = Double(weight) ?? 0
@@ -148,18 +134,14 @@ extension ProfileViewController: UITableViewDelegate {
     }
   }
   
-  func tableView(
-    _ tableView: UITableView,
-    estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+  func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
       switch items[indexPath.row] {
       case .image:  return CGFloat(150)
       default:      return CGFloat(65)
     }
   }
   
-  func tableView(
-    _ tableView: UITableView,
-    didSelectRowAt indexPath: IndexPath) {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       tableView.endEditing(true)
     }
 }

@@ -19,10 +19,10 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="yGi-7b-2g1">
                                 <rect key="frame" x="32" y="108" width="350" height="111"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="잘하셨어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yua-f2-pvW">
-                                        <rect key="frame" x="0.0" y="0.0" width="101.5" height="26.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="잘하셨어요! 권장량 섭취 완료 👍" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yua-f2-pvW">
+                                        <rect key="frame" x="0.0" y="0.0" width="280.5" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                        <color key="textColor" systemColor="systemYellowColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 마신 양은" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5O-fk-wFQ">
@@ -135,6 +135,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="congratsLabel" destination="yua-f2-pvW" id="rzq-ya-vby"/>
                         <outlet property="dailyAmountLabel" destination="QsZ-b3-8kG" id="ePq-jb-wKZ"/>
                         <outlet property="drinkAmountLabel" destination="8ho-2m-wr2" id="mKK-hH-XvO"/>
                         <outlet property="drunkenLabel" destination="ngi-Qk-FhO" id="dEA-CD-jbb"/>

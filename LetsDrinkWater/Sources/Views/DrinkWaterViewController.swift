@@ -10,6 +10,7 @@ import UIKit
 class DrinkWaterViewController: UIViewController {
   
   // MARK: UI
+  @IBOutlet weak var congratsLabel: UILabel!
   @IBOutlet weak var drunkenLabel: UILabel!
   @IBOutlet weak var goalLabel: UILabel!
   @IBOutlet weak var sacImageView: UIImageView!
@@ -24,7 +25,7 @@ class DrinkWaterViewController: UIViewController {
   // MARK: View Life-Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    dailyAmountLabel.text = "프로필을 설정해주세요 :>"
+    congratsLabel.textColor = .clear
     UserDefaults.standard.set(1, forKey: "imageGrade")
   }
 
@@ -38,7 +39,9 @@ class DrinkWaterViewController: UIViewController {
       let userTotal = UserDefaults.standard.string(forKey: "total")!
       dailyAmountLabel.text = "\(userName)님 하루 물 권장 섭취량은 \(userTotal)L 입니다."
     } else {
-      dailyAmountLabel.text = "프로필을 다시 설정해주세요 :<"
+      dailyAmountLabel.text = "⚠️ 프로필을 설정해주세요 :>"
+      dailyAmountLabel.textColor = .systemYellow
+      dailyAmountLabel.font = .boldSystemFont(ofSize: 20)
     }
   }
   
@@ -59,6 +62,7 @@ class DrinkWaterViewController: UIViewController {
     goal = (drunken / (userTotal * 1000)) * 100
     
     if goal >= 100 {
+      congratsLabel.textColor = .systemYellow
       goalLabel.textColor = .yellow
       goalLabel.text = "목표의 \(goal)%"
     } else {
@@ -103,6 +107,7 @@ class DrinkWaterViewController: UIViewController {
     goalLabel.textColor = .white
     goalLabel.text = "목표의 0%"
     sacImageView.image = UIImage(named: "1-1")
+    congratsLabel.textColor = .clear
     UserDefaults.standard.set(1, forKey: "imageGrade")
   }
   
