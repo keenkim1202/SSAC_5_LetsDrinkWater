@@ -122,6 +122,7 @@ class DrinkWaterViewController: UIViewController {
     drunkenLabel.text = "0.0ml"
     goalLabel.textColor = .white
     goalLabel.text = "목표의 0%"
+    drunken = 0
     sacImageView.image = UIImage(named: "1-1")
     congratsLabel.textColor = .clear
     UserDefaults.standard.set(1, forKey: "imageGrade")
