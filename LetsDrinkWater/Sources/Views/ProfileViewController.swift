@@ -63,8 +63,7 @@ class ProfileViewController: UIViewController {
   
   // MARK: Alert
   fileprivate func showAlert(_ message: String) {
-    UIAlertController
-      .show(self, contentType: .error, message: message)
+    UIAlertController.show(self, contentType: .error, message: message)
   }
   
   // MARK: Action
