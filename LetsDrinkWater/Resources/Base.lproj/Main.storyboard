@@ -103,6 +103,7 @@
                             <constraint firstItem="oS5-qq-YuK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3oV-b5-bzU"/>
                             <constraint firstItem="0sq-n5-K4W" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="8YH-a8-Egv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QsZ-b3-8kG" secondAttribute="trailing" id="F55-1U-im4"/>
+                            <constraint firstItem="ehE-6b-fLG" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="F6m-PH-2xr"/>
                             <constraint firstItem="QsZ-b3-8kG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FVk-cg-yib"/>
                             <constraint firstItem="9uh-V2-uwb" firstAttribute="top" secondItem="QsZ-b3-8kG" secondAttribute="bottom" constant="10" id="G8k-Xx-AKd"/>
                             <constraint firstItem="0sq-n5-K4W" firstAttribute="top" secondItem="ehE-6b-fLG" secondAttribute="bottom" constant="30" id="HER-HH-u5S"/>
@@ -110,7 +111,6 @@
                             <constraint firstItem="ehE-6b-fLG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="K7g-6p-eBp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oS5-qq-YuK" secondAttribute="bottom" id="KSk-qg-QLD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ehE-6b-fLG" secondAttribute="trailing" constant="80" id="SEM-b0-UuG"/>
-                            <constraint firstItem="ehE-6b-fLG" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Uo4-Fe-zTO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yGi-7b-2g1" secondAttribute="trailing" constant="32" id="bhs-td-AkU"/>
                             <constraint firstItem="ehE-6b-fLG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jy9-hq-L2R"/>
                             <constraint firstItem="yGi-7b-2g1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="lkl-8C-sWa"/>

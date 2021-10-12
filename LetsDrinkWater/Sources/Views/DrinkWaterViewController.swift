@@ -57,6 +57,15 @@ class DrinkWaterViewController: UIViewController {
     }
   }
   
+  // MARK: Alert
+  fileprivate func drankAlert(_ message: String) {
+    UIAlertController.show(self, contentType: .drank, message: message)
+  }
+  
+  fileprivate func successAlert(_ message: String) {
+    UIAlertController.show(self, contentType: .success, message: message)
+  }
+  
   // MARK: Action
   @IBAction func onDrinkButton(_ sender: UIBarButtonItem) {
     let input: String = drinkAmountLabel.text!
@@ -73,12 +82,11 @@ class DrinkWaterViewController: UIViewController {
       congratsLabel.textColor = .systemYellow
       goalLabel.textColor = .yellow
       goalLabel.text = "목표의 \(goal)%"
+      successAlert("오늘 권장량을 초과했어요!\n\(input)ml 마시기 성공!")
     } else {
       goalLabel.text = "목표의 \(goal)%"
-    }
-    
-    if goal < 100 {
       changeImage(goal)
+      drankAlert("\(input)ml 마시기 성공!")
     }
   }
   

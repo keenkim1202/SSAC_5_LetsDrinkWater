@@ -10,6 +10,8 @@ import UIKit
 extension UIAlertController {
   enum ContentType: String {
     case error = "⚠️ 오류 🤯"
+    case drank = "꿀꺽 💦"
+    case success = "🎖 축목표 달성! 🎖"
   }
   
   static func show(_ presentedHost: UIViewController,
