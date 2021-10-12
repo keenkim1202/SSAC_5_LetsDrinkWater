@@ -87,6 +87,9 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: UITextFieldDelegate {
   func textFieldDidEndEditing(_ textField: UITextField) {
     let item = items[textField.tag]
+    if view.endEditing(true) {
+      itemInputs[item] = textField.text
+    }
     itemInputs[item] = textField.text
     UserDefaults.standard.set(textField.text, forKey: "\(item)")
   }
