@@ -36,7 +36,7 @@ class ProfileViewController: UIViewController {
     tableView.dataSource = self
   }
   
-  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     self.view.endEditing(true)
   }
   
@@ -130,7 +130,7 @@ extension ProfileViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     switch items[indexPath.row] {
     case .image: return CGFloat(150)
-    default: return CGFloat(65)
+    default:     return CGFloat(65)
     }
   }
   

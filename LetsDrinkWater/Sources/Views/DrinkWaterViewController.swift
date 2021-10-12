@@ -37,6 +37,8 @@ class DrinkWaterViewController: UIViewController {
     if userName != nil  {
       let userName = UserDefaults.standard.string(forKey: "nickname")!
       let userTotal = UserDefaults.standard.string(forKey: "total")!
+      dailyAmountLabel.textColor = .white
+      dailyAmountLabel.font = .systemFont(ofSize: 14)
       dailyAmountLabel.text = "\(userName)님 하루 물 권장 섭취량은 \(userTotal)L 입니다."
     } else {
       dailyAmountLabel.text = "⚠️ 프로필을 설정해주세요 :>"
@@ -45,7 +47,7 @@ class DrinkWaterViewController: UIViewController {
     }
   }
   
-  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     self.view.endEditing(true)
   }
   
