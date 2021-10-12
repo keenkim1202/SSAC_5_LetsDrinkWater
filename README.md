@@ -10,7 +10,9 @@
 - [x] '물마시기'버튼을 통해 마신 물을 기록합니다.
 - [x] ProfileVC에 입력한 nickname,height, weight를 바탕으로 DrinkWaterVC 하단에 섭취 권장량을 보여줍니다.
 
-+ 추가 구현 사항 : profileVC에 textField가 반복적으로 사용되므로, profile 목록을 추가하게 될 경우를 염두해 같은 형식(textField로 이루어진 cell) 재사용할 수 있도록 tableView로 작성하였습니다. cell과 Item목록, UserDefaults만 추가해주면 됩니다.
+# 추가 구현 사항 
+- [x] profileVC에 textField가 반복적으로 사용되므로, profile 목록을 추가하게 될 경우를 염두해 같은 형식(textField로 이루어진 cell) 재사용할 수 있도록 tableView로 작성하였습니다. cell과 Item목록, UserDefaults만 추가해주면 됩니다.
+- [x] 앱을 처음 사용 시, 화면 중앙 아래에 '⚠️ 프로필을 설정해주세요 :>' 라는 문구가 출력됩니다. 프로필 화면에서 프로필을 완성 시 nickname과 권장 섭취량이 출력됩니다.
 
 |참조 이미지||구현 앱 UI|
 |:---:|:---:|:--:|
