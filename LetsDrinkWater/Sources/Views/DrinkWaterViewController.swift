@@ -84,7 +84,7 @@ class DrinkWaterViewController: UIViewController {
       goalLabel.text = "목표의 \(goal)%"
       successAlert("오늘 권장량을 초과했어요!\n\(input)ml 마시기 성공!")
     } else {
-      goalLabel.text = "목표의 \(goal)%"
+      goalLabel.text = "목표의 \(round(goal * 100) / 100)%"
       changeImage(goal)
       drankAlert("\(input)ml 마시기 성공!")
     }
