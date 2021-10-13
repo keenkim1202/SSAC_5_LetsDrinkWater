@@ -19,4 +19,4 @@
 |<img width="100%" src="https://user-images.githubusercontent.com/59866819/136822101-b8c0e5bd-f771-468e-b478-8388ec2b5d5d.png" />|<img width="120" src="https://user-images.githubusercontent.com/59866819/135194858-4405d3a0-0de3-4ca6-a594-3b08e0ae951b.png" />|<img width="30%" src="https://user-images.githubusercontent.com/59866819/136821577-f0e40ed7-a1c9-4131-8e39-40a205372e0c.png" /><img width="30%" src="https://user-images.githubusercontent.com/59866819/136821583-d4147543-44f4-4f27-b3e1-93cb30e9df88.png" />|
 
 # 실행 영상
-https://user-images.githubusercontent.com/59866819/136825357-6dae3532-fb73-4ad0-b264-343b37945445.mp4
+<p align="center"><img width="30%" src="https://user-images.githubusercontent.com/59866819/136825357-6dae3532-fb73-4ad0-b264-343b37945445.mp4" /></p>
